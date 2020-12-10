@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import useInterval from '../lib/useInterval'
+import useInterval from '../../lib/useInterval'
 import Clock from './clock'
 import Counter from './counter'
 import Nav from './nav'
