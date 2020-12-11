@@ -1,16 +1,14 @@
 import React from 'react';
-import {Container} from "@material-ui/core";
+import {Container, Divider} from "@material-ui/core";
 import { Grid } from '@material-ui/core';
+import {useWindowSize} from "../../lib/services/ScreenSizes"
+import {Colors} from "../../themes/Colors"
 
 export default function Content({children}) {
-    return <Container maxWidth="lg">
-        {/*<Grid   container*/}
-        {/*        direction="column"*/}
-        {/*        justify="center"*/}
-        {/*        alignItems="flex-start"*/}
-        {/*        spacing={3}*/}
-        {/*        style={{marginTop: '2rem'}}>*/}
+    const {width,height} = useWindowSize()
+    return(
+        <div style={{width:width,height:height}}>
             {children}
-        {/*</Grid>*/}
-    </Container>
+        </div>
+    )
 }

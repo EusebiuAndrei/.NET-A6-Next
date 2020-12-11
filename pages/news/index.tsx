@@ -1,10 +1,15 @@
+import classes from "*.module.css";
 import { GetStaticProps } from "next";
 import DefaultLayout from "../../layouts/DefaultLayout";
+import {FirstNews,NewsTypes} from "../../layouts/components"
 
 export default function Index({news}) {
-    return <DefaultLayout>
-        <h1>Hello world! {news[0].title}</h1>
+    return(
+    <DefaultLayout>
+        <FirstNews/>
+        <NewsTypes/>
     </DefaultLayout>
+    )
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
