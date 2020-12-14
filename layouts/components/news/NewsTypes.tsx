@@ -5,7 +5,7 @@ import {Styles} from "../../../themes/ApplicationStyles"
 import {customTheme,DEFAULT_THEME} from "../../../themes/Fonts"
 import Button from '@material-ui/core/Button';
 
-const typesToRender = ["Politics","Sports","IT","Local","Science","Photography","Movies"]
+const typesToRender = ["Popular","Politics","Sports","IT","Local","Science","Photography","Movies","Trend","Bussiness"]
 
 export default function FirstNews({}) {
     const classes = useStyles();
@@ -15,7 +15,7 @@ export default function FirstNews({}) {
             typesToRender.map((item,key)=>{
                 return (
                     <Button onClick={()=>{alert(item)}} key={key} className={classes.buttonStyle} variant="outlined">
-                        {item}
+                        # {item}
                     </Button>
                 )
             })
@@ -27,19 +27,20 @@ export default function FirstNews({}) {
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         newsTypes:{
-            marginTop:'2%',
             display:'flex',
-            justifyContent:'space-around',
+            justifyContent:'space-between',
             borderTopWidth:1,
-            borderTopColor:Colors.Black
+            borderTopColor:Colors.Black,
+            padding:'1.5%',
         },
         buttonStyle:{
             borderWidth:0,
-            borderBottomWidth:1,
+            borderBottomWidth:0.5,
             borderBottomColor:Colors.LightGray,
-            borderRadius:0,
-            padding:3,
+            padding:2,
             fontFamily:customTheme.typography.fontFamily[DEFAULT_THEME],
+            fontWeight:'bold',
+            color:Colors.DarkGray,
         }
     }),
 );

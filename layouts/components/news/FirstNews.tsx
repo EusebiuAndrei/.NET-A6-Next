@@ -18,7 +18,7 @@ export default function FirstNews({}) {
                 </p>
             </div>
             <div className={classes.imageContainer}>
-                <Box className={classes.boxStyle} boxShadow={13}>
+                <Box className={classes.boxStyle} boxShadow={4}>
                     <img 
                         className={classes.imgStyle}
                         src="https://images.pexels.com/photos/902194/pexels-photo-902194.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"

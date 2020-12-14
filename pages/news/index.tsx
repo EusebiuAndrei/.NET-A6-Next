@@ -1,13 +1,14 @@
 import classes from "*.module.css";
 import { GetStaticProps } from "next";
 import DefaultLayout from "../../layouts/DefaultLayout";
-import {FirstNews,NewsTypes} from "../../layouts/components"
+import {FirstNews,NewsTypes,NewsSection} from "../../layouts/components"
 
 export default function Index({news}) {
     return(
     <DefaultLayout>
-        <FirstNews/>
         <NewsTypes/>
+        <FirstNews/>
+        <NewsSection/>
     </DefaultLayout>
     )
 }
