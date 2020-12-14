@@ -16,6 +16,8 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import useStyles from "./styles/AppBarStyles"
 import {Avatar} from "@material-ui/core"
 import {customTheme,DEFAULT_THEME} from "../../themes/Fonts"
+import Login from "./auth/Login"
+
 export default function PrimarySearchAppBar() {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -127,6 +129,7 @@ export default function PrimarySearchAppBar() {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
+                    <Login/>
                     <div className={classes.grow} />
                     <div className={classes.sectionDesktop}>
                         <IconButton aria-label="show 4 new mails" color="inherit">

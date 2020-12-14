@@ -1,9 +1,10 @@
 import { fade, makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
 import {Colors} from "../../../themes/Colors"
 import {Styles} from "../../../themes/ApplicationStyles"
+import Metrics from "../../../themes/Metrics"
 import {customTheme,DEFAULT_THEME} from "../../../themes/Fonts"
-import { Chip,Grid } from '@material-ui/core';
+import { Chip,Grid,Button } from '@material-ui/core';
+import Link from 'next/link'
 
 const news = [
     {
@@ -98,7 +99,11 @@ export default function NewsSection({}) {
                                 )
                             })
                         }
-                        <img className={classes.image} src={item.image}/>
+                        <Link href={"/news/"+item.id}>
+                            <Button className={classes.imgContainer}>
+                                <img className={classes.image} src={item.image}/>
+                            </Button>
+                        </Link>
                         <p className={classes.description}>{item.content}</p>
                     </div>
                 )
@@ -118,7 +123,8 @@ const useStyles = makeStyles((theme: Theme) =>
             fontFamily:customTheme.typography.fontFamily[DEFAULT_THEME],
             fontWeight:'bold',
             width:'100%',
-            fontSize:'130%'
+            fontSize:'100%',
+            padding:0
         },
         description:{
             fontFamily:customTheme.typography.fontFamily[DEFAULT_THEME],
@@ -130,8 +136,15 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         image:{
             width:'100%',
-            marginTop:'5%'
+            height:'100%',
+            borderRadius:Metrics.defaultBorderRadius
         },
-        
+        imgContainer:{
+            marginTop:'3%',
+            backgroundColor:Colors.UltraLightGray,
+            ...Styles.center,
+            padding:'3%',
+            borderRadius:Metrics.defaultBorderRadius
+        }
     }),
 );
