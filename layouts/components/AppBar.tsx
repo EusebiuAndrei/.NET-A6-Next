@@ -16,7 +16,7 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import useStyles from "./styles/AppBarStyles"
 import {Avatar} from "@material-ui/core"
 import {customTheme,DEFAULT_THEME} from "../../themes/Fonts"
-import Login from "./auth/Login"
+import {Login,Register} from "./auth"
 
 export default function PrimarySearchAppBar() {
     const classes = useStyles();
@@ -73,7 +73,7 @@ export default function PrimarySearchAppBar() {
         >
             <MenuItem>
                 <IconButton aria-label="show 4 new mails" color="inherit">
-                    <Badge badgeContent={4} color="secondary">
+                    <Badge badgeContent={4} color="primary">
                         <MailIcon />
                     </Badge>
                 </IconButton>
@@ -81,7 +81,7 @@ export default function PrimarySearchAppBar() {
             </MenuItem>
             <MenuItem>
                 <IconButton aria-label="show 11 new notifications" color="inherit">
-                    <Badge badgeContent={11} color="secondary">
+                    <Badge badgeContent={11} color="primary">
                         <NotificationsIcon />
                     </Badge>
                 </IconButton>
@@ -110,6 +110,7 @@ export default function PrimarySearchAppBar() {
                         className={classes.menuButton}
                         color="inherit"
                         aria-label="open drawer"
+                        onClick={handleProfileMenuOpen}
                     >
                         <MenuIcon />
                     </IconButton>
@@ -129,29 +130,21 @@ export default function PrimarySearchAppBar() {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
-                    <Login/>
+                    <div className={classes.authContainer}>
+                        <Login/>
+                        <Register/>
+                    </div>
                     <div className={classes.grow} />
                     <div className={classes.sectionDesktop}>
-                        <IconButton aria-label="show 4 new mails" color="inherit">
-                            <Badge badgeContent={4} color="secondary">
-                                <MailIcon />
-                            </Badge>
-                        </IconButton>
-                        <IconButton aria-label="show 17 new notifications" color="inherit">
-                            <Badge badgeContent={17} color="secondary">
-                                <NotificationsIcon />
-                            </Badge>
-                        </IconButton>
-                        <IconButton
-                            edge="end"
-                            aria-label="account of current user"
-                            aria-controls={menuId}
-                            aria-haspopup="true"
-                            onClick={handleProfileMenuOpen}
-                            color="inherit"
-                        >
-                            <Avatar src="https://scontent.fotp1-1.fna.fbcdn.net/v/t1.0-9/90055590_2601518596753880_2203956407743545344_o.jpg?_nc_cat=105&ccb=2&_nc_sid=8bfeb9&_nc_ohc=GUQqEbZ-9UEAX_v4Bum&_nc_ht=scontent.fotp1-1.fna&oh=134cfe5bfef8182146916896a884efb5&oe=5FFEDD85"/>
-                        </IconButton>
+                    <IconButton
+                        edge="end"
+                        aria-label="account of current user"
+                        aria-controls={menuId}
+                        aria-haspopup="true"
+                        color="inherit"
+                    >
+                        <Avatar src="https://scontent.fotp1-1.fna.fbcdn.net/v/t1.0-9/90055590_2601518596753880_2203956407743545344_o.jpg?_nc_cat=105&ccb=2&_nc_sid=8bfeb9&_nc_ohc=GUQqEbZ-9UEAX_v4Bum&_nc_ht=scontent.fotp1-1.fna&oh=134cfe5bfef8182146916896a884efb5&oe=5FFEDD85"/>
+                    </IconButton>
                     </div>
                     <div className={classes.sectionMobile}>
                         <IconButton

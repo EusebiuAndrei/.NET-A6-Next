@@ -3,10 +3,13 @@ import {Colors} from "../../../themes/Colors"
 import {Styles} from "../../../themes/ApplicationStyles"
 import Metrics from "../../../themes/Metrics"
 import {customTheme,DEFAULT_THEME} from "../../../themes/Fonts"
-import { Chip,Grid,Button } from '@material-ui/core';
+import { Chip,Grid,Button,Box } from '@material-ui/core';
 import Link from 'next/link'
+import {capitalizeFirstLetter,getRandomColor,getFirstWordsNews} from "../../../lib/services/StringHelpers";
+import {Visibility,ChromeReaderMode} from '@material-ui/icons'
+import moment from 'moment';
 
-const news = [
+const myNews = [
     {
         id:1,
         title:'Google outage: YouTube, Docs and Gmail knocked offline',
@@ -63,16 +66,8 @@ const news = [
     }
 ]
 
-function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  }
 
-export default function NewsSection({}) {
+export default function NewsSection({news}) {
     const classes = useStyles();
     return(
         <Grid 
@@ -84,28 +79,32 @@ export default function NewsSection({}) {
         {
             news.map((item,key1)=>{
                 return(
-                    <div className={classes.containerNews} key={key1}>
-                        {
-                            item.types.map((type,key2)=>{
-                                return(
-                                    <Chip 
-                                        key={key2}
-                                        label={type} 
-                                        size="small" 
-                                        className={classes.chip}
-                                        style={{backgroundColor:getRandomColor()}}
-                                    />
-                                )
-                            })
-                        }
+                    <Box className={classes.containerNews} key={key1}>
+                        <Chip 
+                            label={capitalizeFirstLetter(item.topic.name)} 
+                            size="small" 
+                            className={classes.chip}
+                            style={{backgroundColor:getRandomColor()}}
+                        />
                         <p className={classes.title}>{item.title}</p>
                         <Link href={"/news/"+item.id}>
                             <Button className={classes.imgContainer}>
-                                <img className={classes.image} src={item.image}/>
+                                <img className={classes.image} src={myNews[item.id%6].image}/>
                             </Button>
                         </Link>
-                        <p className={classes.description}>{item.content}</p>
-                    </div>
+                        <p className={classes.description}>{getFirstWordsNews(item.text,40)}</p>
+                        <div className={classes.infos}>
+                            <div className={classes.infoContainer}>
+                                <Visibility className={classes.icon}/>
+                                <p className={classes.textInfo}>{item.views} views</p>
+                            </div>
+                            <div className={classes.infoContainer}>
+                                <ChromeReaderMode className={classes.icon}/>
+                                <p className={classes.textInfo}>{item.read} reads</p>
+                            </div>
+                            <p className={classes.date}>{moment(item.date).calendar()}</p>
+                        </div>
+                    </Box>
                 )
             })
         }
@@ -117,7 +116,8 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         containerNews:{
             padding:'1%',
-            width:'33%',
+            width:'50%',
+            
         },
         title:{
             fontFamily:customTheme.typography.fontFamily[DEFAULT_THEME],
@@ -128,7 +128,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         description:{
             fontFamily:customTheme.typography.fontFamily[DEFAULT_THEME],
-            color:Colors.DarkGray
+            color:Colors.DarkGray,
         },
         chip:{
             marginRight:'2%',
@@ -145,6 +145,34 @@ const useStyles = makeStyles((theme: Theme) =>
             ...Styles.center,
             padding:'3%',
             borderRadius:Metrics.defaultBorderRadius
+        },
+        infoContainer:{
+            display:'flex',
+            alignItems:'center',
+            flexDirection:'row',
+            justifyContent:'center'
+        },
+        infos:{
+            display:'flex',
+            flexDirection:'row',
+            width:'45%',
+            justifyContent:'space-between',
+            alignItems:'center'
+        },
+        icon:{
+            color:Colors.SecondLightGray,
+            fontSize:23
+        },
+        textInfo:{
+            marginLeft:5,
+            fontSize:'90%',
+            color:Colors.SecondLightGray,
+            fontFamily:customTheme.typography.fontFamily[DEFAULT_THEME],
+        },
+        date:{
+            fontSize:'80%',
+            color:Colors.SecondLightGray,
+            fontFamily:customTheme.typography.fontFamily[DEFAULT_THEME],
         }
     }),
 );

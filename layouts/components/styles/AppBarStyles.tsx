@@ -67,6 +67,11 @@ const useStyles = makeStyles((theme: Theme) =>
                 display: 'none',
             },
         },
+        authContainer:{
+            width:'13%',
+            justifyContent:'space-between',
+            display:'flex'
+        }
     }),
 );
 

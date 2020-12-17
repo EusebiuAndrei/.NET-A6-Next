@@ -31,13 +31,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function Login() {
+export default function Register() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const [username,setUsername] = React.useState(null);
-  const [password,setPassword] = React.useState(null);
-  const [usernameError,setUsernameError] = React.useState(null);
-  const [passwordError,setPasswordError] = React.useState(null);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -47,22 +43,10 @@ export default function Login() {
     setOpen(false);
   };
 
-  const onLoginPress = () =>{
-    if(!username){
-      setUsernameError("Please enter an username");
-    } else if(!password){
-      setPasswordError("Please enter an password");
-      setUsernameError(null);
-    } else {
-      alert('Login!');
-      setUsernameError(null) , setPasswordError(null) , setUsername(null) , setPassword(null)
-    }
-  }
-
   return (
     <React.Fragment>
       <Button variant="contained" color="primary" onClick={handleClickOpen}>
-        Login
+        Register
       </Button>
       <Dialog
         maxWidth="xs"
@@ -70,32 +54,22 @@ export default function Login() {
         onClose={handleClose}
         aria-labelledby="max-width-dialog-title"
       >
-        <DialogTitle id="max-width-dialog-title">Login</DialogTitle>
-        <DialogContent>
+        <DialogTitle id="max-width-dialog-title">Register</DialogTitle>
+        <DialogContent >
           <DialogContentText>
-            Enter you username and password
+            Enter username and password
           </DialogContentText>
           <form className={classes.form} noValidate>
+            <TextField id="standard-basic" label="Username" className={classes.inputStyle}/>
             <TextField 
-              error={usernameError == null ? false : true}
-              id="standard-basic" 
-              label="Username" 
-              className={classes.inputStyle}
-              helperText={usernameError}
-              onChange={(e)=>{setUsername(e.target.value)}}
+              id="standard-password-input" type="password" label="Password" className={classes.inputStyle}
             />
             <TextField 
-              error={passwordError == null ? false : true}
-              id="standard-password-input" 
-              type="password" 
-              label="Password"
-              className={classes.inputStyle}
-              helperText={passwordError}
-              onChange={(e)=>{setPassword(e.target.value)}}
+              id="standard-password-input" type="password" label="Re-type password" className={classes.inputStyle}
             />
-          <Button onClick={onLoginPress} className={classes.btn} variant="contained" color="primary">
-            Login
-          </Button>
+            <Button className={classes.btn} variant="contained" color="primary">
+                Register
+            </Button>
           </form>
         </DialogContent>
         <DialogActions>

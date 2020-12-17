@@ -1,4 +1,6 @@
 import https from 'https';
+import {ApiService} from "../../themes/Constants"
+const HOST = ApiService.LOCAL
 
 const agent = new https.Agent({
      rejectUnauthorized: false,
@@ -6,16 +8,25 @@ const agent = new https.Agent({
 
 const getNews = async () => {
     try{
-        const res = await fetch('https://localhost:5001/api/v1/news', {agent} as RequestInit)
-        // console.log('RES', res);
+        const res = await fetch(`${HOST}/api/v1/news`, {agent} as RequestInit)
         const data = await res.json()
-        // console.log('DATA', data);
         return data;
-    }catch(e){
+    } catch(e){
+        console.log(e)
+    }
+}
+
+const getTopics = async () => {
+    try{
+        const res = await fetch(`${HOST}/api/v1/topic`, {agent} as RequestInit)
+        const data = await res.json()
+        return data;
+    } catch(e){
         console.log(e)
     }
 }
 
 export default {
-    getNews
+    getNews,
+    getTopics
 }
