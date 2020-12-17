@@ -15,11 +15,11 @@ export default function Index({news}) {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-    const data = await ApiService.getNews();
+    // const data = await ApiService.getNews();
 
     return {
         props: {
-            news: data
+            news: []
         }
     }
 

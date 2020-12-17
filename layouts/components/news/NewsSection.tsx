@@ -85,7 +85,6 @@ export default function NewsSection({}) {
             news.map((item,key1)=>{
                 return(
                     <div className={classes.containerNews} key={key1}>
-                        <p className={classes.title}>{item.title}</p>
                         {
                             item.types.map((type,key2)=>{
                                 return(
@@ -99,6 +98,7 @@ export default function NewsSection({}) {
                                 )
                             })
                         }
+                        <p className={classes.title}>{item.title}</p>
                         <Link href={"/news/"+item.id}>
                             <Button className={classes.imgContainer}>
                                 <img className={classes.image} src={item.image}/>
