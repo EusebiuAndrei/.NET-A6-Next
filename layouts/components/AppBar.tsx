@@ -136,7 +136,7 @@ export default function PrimarySearchAppBar() {
                     </div>
                     <div className={classes.grow} />
                     <div className={classes.sectionDesktop}>
-                    <IconButton
+                    {/* <IconButton
                         edge="end"
                         aria-label="account of current user"
                         aria-controls={menuId}
@@ -144,7 +144,7 @@ export default function PrimarySearchAppBar() {
                         color="inherit"
                     >
                         <Avatar src="https://scontent.fotp1-1.fna.fbcdn.net/v/t1.0-9/90055590_2601518596753880_2203956407743545344_o.jpg?_nc_cat=105&ccb=2&_nc_sid=8bfeb9&_nc_ohc=GUQqEbZ-9UEAX_v4Bum&_nc_ht=scontent.fotp1-1.fna&oh=134cfe5bfef8182146916896a884efb5&oe=5FFEDD85"/>
-                    </IconButton>
+                    </IconButton> */}
                     </div>
                     <div className={classes.sectionMobile}>
                         <IconButton
@@ -159,7 +159,7 @@ export default function PrimarySearchAppBar() {
                     </div>
                 </Toolbar>
             </AppBar>
-            {renderMobileMenu}
+            {/* {renderMobileMenu} */}
             {renderMenu}
         </div>
     );

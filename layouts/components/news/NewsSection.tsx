@@ -155,7 +155,7 @@ const useStyles = makeStyles((theme: Theme) =>
         infos:{
             display:'flex',
             flexDirection:'row',
-            width:'45%',
+            width:300,
             justifyContent:'space-between',
             alignItems:'center'
         },
@@ -165,7 +165,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         textInfo:{
             marginLeft:5,
-            fontSize:'90%',
+            fontSize:'80%',
             color:Colors.SecondLightGray,
             fontFamily:customTheme.typography.fontFamily[DEFAULT_THEME],
         },

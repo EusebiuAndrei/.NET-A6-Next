@@ -48,10 +48,13 @@ export default function Login() {
   };
 
   const onLoginPress = () =>{
-    if(!username){
-      setUsernameError("Please enter an username");
+    if(!username && !password){
+      setUsernameError("Please enter your username");
+      setPasswordError("Please enter your password");
+    } else if(!username){
+      setUsernameError("Please enter your username");
     } else if(!password){
-      setPasswordError("Please enter an password");
+      setPasswordError("Please enter your password");
       setUsernameError(null);
     } else {
       alert('Login!');
