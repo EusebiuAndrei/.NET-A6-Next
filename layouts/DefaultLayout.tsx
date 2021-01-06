@@ -4,8 +4,10 @@ import Content from "./components/Content";
 
 const DefaultLayout = ({children}) => {
     return <>
-        <AppBar />
-        <Content>{children}</Content>
+        <AppBar/>
+        <Content>
+            {children}
+        </Content>
     </>
 }
 
