@@ -13,6 +13,7 @@ export default function FirstNews({}) {
                 <p className={classes.typeText}>Politics</p>
             </div>
             <div className={classes.titleContainer}>
+                <p className={classes.sourceText}>Source www.kaggle.com</p>
                 <p className={classes.titleText}>Europe has fallen behind on covid-19 vaccination</p>
             </div>
         </div>
@@ -31,31 +32,37 @@ const useStyles = makeStyles((theme: Theme) =>
             marginTop:'1%'
         },
         typeContainer:{
-            width:'15%',
+            width:'20%',
             height:'100%',
             display:'flex',
             justifyContent:'center',
-            // alignItems:'center',
-            flexDirection:'column'
+            flexDirection:'column',
+            // backgroundColor:'red'
         },
         titleContainer:{
-            width:'65%',
+            width:'60%',
             height:'100%',
-            display:'flex',
-            justifyContent:'center',
-            // alignItems:'center'
+            // backgroundColor:'green'
         },
         typeText:{
-            fontSize:20,
+            fontSize:'125%',
             fontWeight:'bold'
         },
+        sourceText:{
+            // backgroundColor:'red',
+            marginTop:26,
+            fontSize:'115%',
+            fontWeight:'lighter',
+            color:'#4051B6'
+        },
         titleText:{
-            fontSize:30,
-            fontWeight:'normal'
+            fontSize:'180%',
+            fontWeight:'normal',
+            // backgroundColor:'blue',
         },
         bar:{
             display:'flex',
-            width:'100%',
+            width:'80%',
             height:'5%',
             backgroundColor:'black'
         }
