@@ -1,8 +1,8 @@
 import classes from "*.module.css";
 import { GetStaticProps } from "next";
-import DefaultLayout from "../../layouts/DefaultLayout";
-import {FirstNews,NewsTypes,NewsSection} from "../../layouts/components"
-import ApiService from "../../lib/services/ApiService";
+import DefaultLayout from "../layouts/DefaultLayout";
+import {FirstNews,NewsTypes,NewsSection} from "../layouts/components"
+import ApiService from "../lib/services/ApiService";
 
 export default function Index({news,topics}) {
     return(

@@ -1,10 +1,16 @@
 import { GetStaticProps } from "next";
 import DefaultLayout from "../../layouts/DefaultLayout";
+import {HeaderNews} from "../../layouts/components"
+import { fade, makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 export default function Index({news}) {
+    const classes = useStyles();
     return <DefaultLayout>
-        <h1>{news.title}</h1>
-        <p>{news.text}</p>
+       <HeaderNews/>
+        <div className={classes.imgContainer}>
+            <img className={classes.img} src={"https://www.economist.com/img/b/1280/720/90/sites/default/files/images/2021/01/articles/main/20210109_eup503.jpg"}/>
+        </div>
+
     </DefaultLayout>
 }
 
@@ -30,7 +36,27 @@ export async function getStaticPaths() {
 export const getStaticProps: GetStaticProps = async (context) => {
     return {
         props: {
-            news: { title: 'a', text: 'abcd' }
+            news: [
+                { 
+                    title: 'a', text: 'abcd' 
+                }
+            ]
         }
     }
 }
+
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        imgContainer:{
+            width:'100%',
+            height:'70%',
+            display:'flex',
+            justifyContent:'center',
+            alignItems:'center'
+        },
+        img:{
+            width:'80%',
+            height:'100%'
+        }
+    })
+);
