@@ -74,8 +74,8 @@ export default function RecommandationNews() {
         <Grid container className={classes.root}>
             <Grid container spacing={3} className={classes.container}>
                 {
-                    myNews.map((value) => (
-                        <Grid key={value} item>
+                    myNews.map((value,key) => (
+                        <Grid key={key} item>
                             <Button className={classes.paper}>
                                 <img className={classes.img} src={value.image}/>
                             </Button>

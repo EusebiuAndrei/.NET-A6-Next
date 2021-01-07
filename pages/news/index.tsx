@@ -21,6 +21,7 @@ export default function Index({news,topics}) {
 export const getStaticProps: GetStaticProps = async (context) => {
     const news = await ApiService.getNews();
     const topics = await ApiService.getTopics();
+
     return {
         props: {
             news,
