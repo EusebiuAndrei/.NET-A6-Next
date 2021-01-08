@@ -1,8 +1,9 @@
-import classes from "*.module.css";
-import { GetStaticProps } from "next";
+import {GetServerSideProps, GetStaticProps} from "next";
 import DefaultLayout from "../../layouts/DefaultLayout";
 import {FirstNews,NewsTypes,NewsSection} from "../../layouts/components"
 import ApiService from "../../lib/services/ApiService";
+import authReqHeader from "../../lib/authRequestHeaders";
+import authorize from "../../lib/authorize";
 
 export default function Index({news,topics}) {
     return(
@@ -18,14 +19,16 @@ export default function Index({news,topics}) {
     )
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
-    const news = await ApiService.getNews();
-    const topics = await ApiService.getTopics();
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    const {isAuthorized, redirectObject} = authorize(context);
+    if (!isAuthorized) return redirectObject;
+
+    const news = await ApiService.getNews(authReqHeader(context));
+    const topics = await ApiService.getTopics(authReqHeader(context));
     return {
         props: {
             news,
             topics
         }
     }
-
 }

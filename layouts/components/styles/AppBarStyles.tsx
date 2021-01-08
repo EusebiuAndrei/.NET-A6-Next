@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
             marginRight: theme.spacing(2),
         },
         title: {
+            marginRight: 'auto',
             display: 'none',
             [theme.breakpoints.up('sm')]: {
                 display: 'block',
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
                 backgroundColor: fade(theme.palette.common.white, 0.25),
             },
             marginRight: theme.spacing(2),
-            marginLeft: 0,
+            // marginLeft: 0,
             width: '100%',
             [theme.breakpoints.up('sm')]: {
                 marginLeft: theme.spacing(3),

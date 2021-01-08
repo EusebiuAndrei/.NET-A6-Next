@@ -7,7 +7,7 @@ import {Colors} from "../../themes/Colors"
 export default function Content({children}) {
     const {width,height} = useWindowSize()
     return(
-        <div style={{width:width,height:height}}>
+        <div style={{height:height}}>
             {children}
         </div>
     )
