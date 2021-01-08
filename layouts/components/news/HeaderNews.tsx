@@ -4,7 +4,7 @@ import {Colors} from "../../../themes/Colors"
 import {Styles} from "../../../themes/ApplicationStyles"
 import {customTheme,DEFAULT_THEME} from "../../../themes/Fonts"
 
-export default function FirstNews({}) {
+export default function FirstNews({title,topic,source}) {
     const classes = useStyles();
     return(
         <div className={classes.container}>
@@ -13,8 +13,8 @@ export default function FirstNews({}) {
                 <p className={classes.typeText}>Politics</p>
             </div>
             <div className={classes.titleContainer}>
-                <p className={classes.sourceText}>Source www.kaggle.com</p>
-                <p className={classes.titleText}>Europe has fallen behind on covid-19 vaccination</p>
+                <p className={classes.sourceText}>Source {source}</p>
+                <p className={classes.titleText}>{title}</p>
             </div>
         </div>
     )
