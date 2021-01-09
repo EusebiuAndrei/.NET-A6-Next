@@ -13,12 +13,14 @@ import {Login,Register} from "./auth"
 import Logout from "./auth/Logout";
 import Button from "@material-ui/core/Button";
 import {useAuthorization} from "../../lib/authorize";
+import {useRouter} from "next/router";
 
 export default function PrimarySearchAppBar() {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
     const {isAuthorized} = useAuthorization();
+    const router = useRouter();
 
     console.log("~~~~~~~~~~~~~~~~~~")
     console.log(isAuthorized)
@@ -84,6 +86,9 @@ export default function PrimarySearchAppBar() {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
+                    {isAuthorized && <Button variant='contained' color='primary' onClick={() => router.push('/validate-news')}>
+                        Validate News
+                    </Button>}
                 </Toolbar>
             </AppBar>
             {renderMenu}

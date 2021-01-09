@@ -116,7 +116,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         containerNews:{
             padding:'1%',
-            width:'50%',
+            width:'45%',
             
         },
         title:{

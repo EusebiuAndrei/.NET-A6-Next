@@ -1,0 +1,128 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"09a4d14c-0cf2-4877-8e30-cb4480ceefdb\" name=\"Default Changelist\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/layouts/DefaultLayout.tsx\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/layouts/components/AppBar.tsx\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/layouts/components/Content.tsx\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/next-env.d.ts\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/package-lock.json\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/pages/_document.tsx\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/pages/news/[id].tsx\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/pages/news/index.tsx\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/pages/styles.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/tsconfig.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/components/clock.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/old/components/clock.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/components/counter.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/old/components/counter.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/components/nav.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/old/components/nav.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/components/page.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/old/components/page.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/package.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/package.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pages/_app.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/pages/_app.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pages/index.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/pages/index.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pages/ssg.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/old/pages/ssg.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pages/ssr.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/old/pages/ssr.js\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1lQoOYf5ZLXbpkrvUkCIesNO9xU\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_ADD_EXTERNAL_FILES\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"yarn\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.pluginManager\" />\r\n    <property name=\"ts.external.directory.path\" value=\"$PROJECT_DIR$/node_modules/typescript/lib\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"$PROJECT_DIR$/old\" />\r\n      <recent name=\"$PROJECT_DIR$/old/pages\" />\r\n      <recent name=\"$PROJECT_DIR$/layouts/components\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"09a4d14c-0cf2-4877-8e30-cb4480ceefdb\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1607538647348</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1607538647348</updated>\r\n      <workItem from=\"1607538655943\" duration=\"6864000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision a4e41f3b506b9e37b4977d6865f06c36ce486a50)
++++ .idea/workspace.xml	(date 1610084272216)
+@@ -1,5 +1,38 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
++  <component name="BranchesTreeState">
++    <expand>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++    </expand>
++    <select>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="BRANCH:single-news-page" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++    </select>
++  </component>
+   <component name="ChangeListManager">
+     <list default="true" id="09a4d14c-0cf2-4877-8e30-cb4480ceefdb" name="Default Changelist" comment="">
+       <change afterPath="$PROJECT_DIR$/layouts/DefaultLayout.tsx" afterDir="false" />
+@@ -28,8 +61,19 @@
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="main" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
++  <component name="JsFlowSettings">
++    <service-enabled>true</service-enabled>
++    <exe-path />
++    <other-services-enabled>true</other-services-enabled>
++    <auto-save>true</auto-save>
++  </component>
+   <component name="ProjectId" id="1lQoOYf5ZLXbpkrvUkCIesNO9xU" />
+   <component name="ProjectLevelVcsManager">
+     <ConfirmationsSetting value="2" id="Add" />
+@@ -45,7 +89,7 @@
+     <property name="WebServerToolWindowFactoryState" value="false" />
+     <property name="nodejs_package_manager_path" value="yarn" />
+     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
++    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+     <property name="vue.rearranger.settings.migration" value="true" />
+   </component>
+   <component name="RecentsManager">
+@@ -64,6 +108,7 @@
+       <option name="presentableId" value="Default" />
+       <updated>1607538647348</updated>
+       <workItem from="1607538655943" duration="6864000" />
++      <workItem from="1610013651486" duration="28833000" />
+     </task>
+     <servers />
+   </component>
+@@ -75,13 +120,40 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State />
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="origin/development" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
+           </value>
+         </entry>
+       </map>
+     </option>
++    <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+   </component>
++  <component name="WindowStateProjectService">
++    <state x="720" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610036458029">
++      <screen x="0" y="0" width="1920" height="1040" />
++    </state>
++    <state x="720" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1610036458029" />
++    <state x="461" y="165" key="SettingsEditor" timestamp="1610044068594">
++      <screen x="0" y="0" width="1920" height="1040" />
++    </state>
++    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1610044068594" />
++    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1610044065071">
++      <screen x="0" y="0" width="1920" height="1040" />
++    </state>
++    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1610044065071" />
++  </component>
+ </project>
+\ No newline at end of file

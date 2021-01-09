@@ -28,36 +28,20 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/development" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:single-news-page" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09a4d14c-0cf2-4877-8e30-cb4480ceefdb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/hooks/useLogin.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hooks/useLogout.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hooks/useRegister.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/layouts/components/auth/Logout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/authRequestHeaders.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/authorize.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/isServer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/types/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/validate-news/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/layouts/components/AppBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/components/AppBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/components/Content.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/components/Content.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/components/auth/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/components/auth/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/components/auth/Register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/components/auth/Register.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/components/styles/AppBarStyles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/components/styles/AppBarStyles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/components/news/HeaderNews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/components/news/HeaderNews.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/components/news/NewsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/components/news/NewsSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/services/ApiService.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/ApiService.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/news/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/news/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/Constants.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/themes/Constants.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,16 +51,10 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="single-news-page" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <other-services-enabled>true</other-services-enabled>
-    <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1lQoOYf5ZLXbpkrvUkCIesNO9xU" />
   <component name="ProjectLevelVcsManager">
@@ -93,7 +71,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -112,7 +90,6 @@
       <option name="presentableId" value="Default" />
       <updated>1607538647348</updated>
       <workItem from="1607538655943" duration="6864000" />
-      <workItem from="1610013651486" duration="28833000" />
     </task>
     <servers />
   </component>
@@ -130,7 +107,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/development" />
+                        <option value="single-news-page" />
                       </list>
                     </value>
                   </entry>
@@ -147,17 +124,13 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="720" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610036458029">
+    <state x="184" y="86" key="MergeDialog" timestamp="1610084523381">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="720" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1610036458029" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1610044068594">
+    <state x="184" y="86" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610084523381" />
+    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1610084523402">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1610044068594" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1610044065071">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1610044065071" />
+    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610084523402" />
   </component>
 </project>

@@ -10,7 +10,7 @@ export default function FirstNews({title,topic,source}) {
         <div className={classes.container}>
             <div className={classes.typeContainer}>
                 <div className={classes.bar}></div>
-                <p className={classes.typeText}>Politics</p>
+                <p className={classes.typeText}>{topic}</p>
             </div>
             <div className={classes.titleContainer}>
                 <p className={classes.sourceText}>Source {source}</p>
