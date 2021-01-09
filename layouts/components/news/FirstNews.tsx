@@ -4,11 +4,12 @@ import {Colors} from "../../../themes/Colors"
 import {Styles} from "../../../themes/ApplicationStyles"
 import {customTheme,DEFAULT_THEME} from "../../../themes/Fonts"
 import {Carousel} from 'react-bootstrap'
+const INTERVAL = 1000
 export default function FirstNews({}) {
     const classes = useStyles();
     return(
             <Carousel className={classes.firstNewsContainer}>
-                <Carousel.Item interval={1000}>
+                <Carousel.Item interval={INTERVAL}>
                     <div className={classes.imageContainer}>
                         <Box className={classes.boxStyle} boxShadow={4}>
                             <img 
@@ -26,7 +27,7 @@ export default function FirstNews({}) {
                     </p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item interval={1000}>
+                <Carousel.Item interval={INTERVAL}>
                     <div className={classes.imageContainer}>
                         <Box className={classes.boxStyle} boxShadow={4}>
                             <img 
@@ -44,9 +45,9 @@ export default function FirstNews({}) {
                     </p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item interval={1000}>
+                <Carousel.Item interval={INTERVAL}>
                     <div className={classes.imageContainer}>
-                        <Box className={classes.boxStyle} boxShadow={4}>
+                        <Box className={classes.boxStyle} boxShadow={0}>
                             <img 
                                 className={classes.imgStyle}
                                 src="https://www.economist.com/img/b/1280/720/90/sites/default/files/images/print-edition/20210109_BRP002_0.jpg"
@@ -100,12 +101,19 @@ const useStyles = makeStyles((theme: Theme) =>
             fontFamily:customTheme.typography.fontFamily[DEFAULT_THEME],
             textAlign:'center',
             fontSize:'200%',
+            color:Colors.White,
+            backgroundColor:Colors.BlackOpacity,
+            padding:5,
+            borderRadius:5
         },
         subTitle:{
-            color:Colors.DarkGray,
+            backgroundColor:Colors.BlackOpacity,
+            color:Colors.White,
             fontSize:'110%',
             textAlign:'center',
             fontFamily:customTheme.typography.fontFamily[DEFAULT_THEME],
+            padding:5,
+            borderRadius:5
         },
     }),
 );
