@@ -4,6 +4,7 @@ import {Colors} from "../../../themes/Colors"
 import {Styles} from "../../../themes/ApplicationStyles"
 import {customTheme,DEFAULT_THEME} from "../../../themes/Fonts"
 import Button from '@material-ui/core/Button';
+import Link from 'next/link'
 
 export default function FirstNews({topics}) {
     const classes = useStyles();
@@ -12,9 +13,11 @@ export default function FirstNews({topics}) {
         {
             topics.map((item,key)=>{
                 return (
-                    <Button onClick={()=>{alert(item.name)}} key={key} className={classes.buttonStyle} variant="outlined">
-                        # {item.name}
-                    </Button>
+                    <Link href={"/topic/"+item.name}>
+                        <Button key={key} className={classes.buttonStyle} variant="outlined">
+                            # {item.name}
+                        </Button>
+                    </Link>
                 )
             })
         }
