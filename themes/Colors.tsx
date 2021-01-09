@@ -5,7 +5,8 @@ const Colors = {
     SecondLightGray:"#9C9C9C",
     DarkGray:"#525252",
     White:"#FFFFFF",
-    UltraLightGray:'#F7F7F7'
+    UltraLightGray:'#F7F7F7',
+    BlackOpacity:'#000000B3'
 }
 
 export {
