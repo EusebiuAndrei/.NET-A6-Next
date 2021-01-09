@@ -3,7 +3,6 @@ import { GetStaticProps } from "next";
 import DefaultLayout from "../layouts/DefaultLayout";
 import {FirstNews,NewsTypes,NewsSection} from "../layouts/components"
 import ApiService from "../lib/services/ApiService";
-
 export default function Index({news,topics}) {
     return(
     <DefaultLayout>
@@ -19,8 +18,8 @@ export default function Index({news,topics}) {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-    const news = await ApiService.getNews();
-    const topics = await ApiService.getTopics();
+    const news = await ApiService.getNews(context);
+    const topics = await ApiService.getTopics(context);
     return {
         props: {
             news,
