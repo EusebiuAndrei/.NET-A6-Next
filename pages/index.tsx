@@ -8,6 +8,7 @@ export default function Index({news,topics}) {
     <DefaultLayout>
         <NewsTypes
             topics={topics}
+            currentTopic={null}
         />
         <FirstNews/>
         <NewsSection

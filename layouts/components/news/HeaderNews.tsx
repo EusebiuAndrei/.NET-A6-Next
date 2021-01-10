@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme: Theme) =>
             marginTop:26,
             fontSize:'115%',
             fontWeight:'lighter',
-            color:'#4051B6'
+            color:Colors.PrimaryColor
         },
         titleText:{
             fontSize:'180%',

@@ -14,7 +14,8 @@ import Logout from "./auth/Logout";
 import Button from "@material-ui/core/Button";
 import {useAuthorization} from "../../lib/authorize";
 import {useRouter} from "next/router";
-
+import HomeIcon from '@material-ui/icons/Home';
+import Link from 'next/link'
 export default function PrimarySearchAppBar() {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -68,8 +69,20 @@ export default function PrimarySearchAppBar() {
                         aria-label="open drawer"
                         onClick={handleProfileMenuOpen}
                     >
-                        <MenuIcon />
+                    <MenuIcon />
                     </IconButton>
+                    <Link href="/">
+                        <IconButton
+                            className={classes.menuButton}
+                            edge="start"
+                            color="inherit"
+                            aria-label="open drawer"
+                        >
+                            <HomeIcon
+                                className={classes.homeIcon}
+                            />
+                        </IconButton>
+                    </Link>
                     <Typography className={classes.title} variant="h6" noWrap>
                         News detection
                     </Typography>

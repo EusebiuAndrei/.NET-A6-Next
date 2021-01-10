@@ -1,22 +1,26 @@
 import { GetStaticProps } from "next";
 import {useState} from 'react'
 import DefaultLayout from "../../layouts/DefaultLayout";
-import {NewsSection} from "../../layouts/components"
+import {NewsSection,NewsTypes} from "../../layouts/components"
 import NewLineText from "../../layouts/components/NewLineText"
 import { fade, makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import ApiService from "../../lib/services/ApiService";
 import { useRouter } from 'next/router'
 import {Colors} from "../../themes/Colors"
-export default function Index({news}) {
+export default function Index({news,topics}) {
     const classes = useStyles();
     const router = useRouter()
     const { name } = router.query
 
     return <DefaultLayout>
-        <div className={classes.container}>
+        <NewsTypes
+            topics={topics}
+            currentTopic={name}
+        />
+        {/* <div className={classes.container}>
             <div className={classes.title}/>
             <p className={classes.bar}>{name}</p>
-        </div>
+        </div> */}
         <NewsSection
             news={news}
         />    
@@ -35,9 +39,11 @@ export async function getStaticPaths() {
 
 export const getStaticProps: GetStaticProps = async (context) => {
     const news = await ApiService.getNews(context);
+    const topics = await ApiService.getTopics(context);
     return {
         props: {
-            news
+            news,
+            topics
         }
     }
 }

@@ -72,7 +72,10 @@ const useStyles = makeStyles((theme: Theme) =>
             width:'13%',
             justifyContent:'space-between',
             display:'flex'
-        }
+        },
+        homeIcon:{
+            color:'white',
+        },
     }),
 );
 

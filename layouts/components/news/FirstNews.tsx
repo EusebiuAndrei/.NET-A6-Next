@@ -72,17 +72,8 @@ const useStyles = makeStyles((theme: Theme) =>
         firstNewsContainer:{
             width:'100%',
             height:'80%',
-            display:'flex',
-            flexDirection:'row',
-            marginBottom:'2%'
-        },
-        textFirstNews:{
-            width:'35%',
-            height:'100%',
-            ...Styles.center,
-            padding:'2%',
-            display:'flex',
-            flexDirection:'column'
+            marginBottom:'4%',
+            marginTop:'0.1%'
         },
         imageContainer:{
             width:'100%',
@@ -91,7 +82,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         boxStyle:{
             width:'100%',
-            height:'90%',
+            height:'100%',
         },
         imgStyle:{
             ...Styles.fill,
