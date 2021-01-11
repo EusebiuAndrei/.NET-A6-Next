@@ -18,6 +18,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import Link from 'next/link'
 export default function PrimarySearchAppBar() {
     const classes = useStyles();
+    const [searchValue,setSearchValue] = React.useState(null);
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
     const {isAuthorized} = useAuthorization();
@@ -84,7 +85,7 @@ export default function PrimarySearchAppBar() {
                         </IconButton>
                     </Link>
                     <Typography className={classes.title} variant="h6" noWrap>
-                        News detection
+                        News detection {searchValue}
                     </Typography>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
@@ -97,6 +98,7 @@ export default function PrimarySearchAppBar() {
                                 input: classes.inputInput,
                             }}
                             inputProps={{ 'aria-label': 'search' }}
+                            onChange={(event)=>{setSearchValue(event.target.value)}}
                         />
                     </div>
                     {isAuthorized && <Button variant='contained' color='primary' onClick={() => router.push('/validate-news')}>
