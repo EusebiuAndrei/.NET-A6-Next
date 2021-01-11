@@ -35,13 +35,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09a4d14c-0cf2-4877-8e30-cb4480ceefdb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/validate-news/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/components/validate-news/ValidateNews.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/components/validate-news/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/components/AppBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/components/AppBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/components/news/HeaderNews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/components/news/HeaderNews.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/components/news/NewsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/components/news/NewsSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/services/ApiService.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/ApiService.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/news/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/news/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/validate-news/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/validate-news/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +87,8 @@
       <option name="presentableId" value="Default" />
       <updated>1607538647348</updated>
       <workItem from="1607538655943" duration="6864000" />
+      <workItem from="1610212644581" duration="655000" />
+      <workItem from="1610355563540" duration="2488000" />
     </task>
     <servers />
   </component>
@@ -132,5 +131,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610084523402" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1610356726310">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1610356726310" />
   </component>
 </project>
