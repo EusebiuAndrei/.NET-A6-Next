@@ -7,15 +7,15 @@ import { fade, makeStyles, Theme, createStyles } from '@material-ui/core/styles'
 import ApiService from "../../lib/services/ApiService";
 import { useRouter } from 'next/router'
 import {Colors} from "../../themes/Colors"
-export default function Index({news,topics}) {
+export default function Index({news,topics,topicName}) {
     const classes = useStyles();
     const router = useRouter()
-    const { name } = router.query
+    const { id } = router.query
 
     return <DefaultLayout>
         <NewsTypes
             topics={topics}
-            currentTopic={name}
+            currentTopic={id}
         />
         {/* <div className={classes.container}>
             <div className={classes.title}/>
@@ -30,20 +30,20 @@ export default function Index({news,topics}) {
 // This function gets called at build time
 export async function getStaticPaths() {
     const paths = [
-        { params: { name: '1' } },
-        { params: { name: '2' } }
+        { params: { id: '1' } },
+        { params: { id: '2' } }
     ]
     return { paths, fallback: 'blocking' }
 }
 
 
 export const getStaticProps: GetStaticProps = async (context) => {
-    const news = await ApiService.getNews(context);
+    const news = await ApiService.getNewsByTopic(context.params.id);
     const topics = await ApiService.getTopics(context);
     return {
         props: {
             news,
-            topics
+            topics,
         }
     }
 }

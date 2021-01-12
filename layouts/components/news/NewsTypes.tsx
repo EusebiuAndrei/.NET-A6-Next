@@ -13,10 +13,10 @@ export default function NewsTypes({topics,currentTopic}) {
         {
             topics.map((item : any,key : any)=>{
                 return (
-                    <Link key={key} href={"/topic/"+item.name}>
+                    <Link key={key} href={`/topic/${item.id}`}>
                         <Button 
                             key={key} 
-                            className={currentTopic != item.name ? classes.buttonStyle : classes.buttonSelectedStyle } 
+                            className={currentTopic != item.id ? classes.buttonStyle : classes.buttonSelectedStyle } 
                             variant="outlined"
                         >
                             # {item.name}
