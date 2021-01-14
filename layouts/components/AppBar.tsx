@@ -87,20 +87,6 @@ export default function PrimarySearchAppBar() {
                     <Typography className={classes.title} variant="h6" noWrap>
                         News detection {searchValue}
                     </Typography>
-                    <div className={classes.search}>
-                        <div className={classes.searchIcon}>
-                            <SearchIcon />
-                        </div>
-                        <InputBase
-                            placeholder="Search…"
-                            classes={{
-                                root: classes.inputRoot,
-                                input: classes.inputInput,
-                            }}
-                            inputProps={{ 'aria-label': 'search' }}
-                            onChange={(event)=>{setSearchValue(event.target.value)}}
-                        />
-                    </div>
                     {isAuthorized && <Button variant='contained' color='primary' onClick={() => router.push('/validate-news')}>
                         Validate News
                     </Button>}

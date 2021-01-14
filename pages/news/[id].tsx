@@ -7,7 +7,7 @@ import { fade, makeStyles, Theme, createStyles } from '@material-ui/core/styles'
 import ApiService from "../../lib/services/ApiService";
 import { useRouter } from 'next/router'
 import moment from 'moment'
-export default function Index({currentNews}) {
+export default function Index({currentNews,latestNews}) {
     const [read,setRead] = React.useState(false)
     const classes = useStyles();
     const router = useRouter()
@@ -42,6 +42,7 @@ export default function Index({currentNews}) {
             title={currentNews.title}
             topic={currentNews.topic.name}
             source={currentNews.sourceLink}
+            classifiedAs={currentNews.classifiedAs}
        />
         {
             currentNews.sourceImage === "" ? null : 
@@ -64,7 +65,9 @@ export default function Index({currentNews}) {
             <p className={classes.otherNewsText}>Other news you might like</p>
             <p className={classes.recomandated}>Recommended by News Detection</p>
         </div>
-        <RecommandationNews/>
+        <RecommandationNews
+            latestNews={latestNews}
+        />
     </DefaultLayout>
 }
 
@@ -90,9 +93,11 @@ export async function getStaticPaths() {
 
 export const getStaticProps: GetStaticProps = async (context) => {
     const currentNews = await ApiService.getNewsById(context.params.id);
+    const latestNews = await ApiService.latestNews(context,6);
     return {
         props: {
-            currentNews
+            currentNews,
+            latestNews
         }
     }
 }
@@ -151,6 +156,7 @@ const useStyles = makeStyles((theme: Theme) =>
             fontSize:'80%',
             width:'77%',
             color:'#9C9C9C'
-        }
+        },
+
     })
 );

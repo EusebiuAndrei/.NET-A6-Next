@@ -8,6 +8,8 @@ import Link from 'next/link'
 import {capitalizeFirstLetter,getRandomColor,getFirstWordsNews} from "../../../lib/services/StringHelpers";
 import {Visibility,ChromeReaderMode} from '@material-ui/icons'
 import moment from 'moment';
+import PriorityHighIcon from '@material-ui/icons/PriorityHigh';
+import CheckIcon from '@material-ui/icons/Check';
 
 export default function NewsSection({news}) {
     const classes = useStyles();
@@ -30,7 +32,7 @@ export default function NewsSection({news}) {
                                 style={{backgroundColor:getRandomColor()}}
                             />
                             <div className={classes.titleContainer}>
-                                <p className={classes.title}>{item.title}</p>
+                                <p className={classes.title}>{getFirstWordsNews(item.title,10)}</p>
                             </div>
                             {
                                 item.sourceImage === "" ? null : 
@@ -38,7 +40,7 @@ export default function NewsSection({news}) {
                                         <img className={classes.image} src={item.sourceImage}/>                                
                                     </Button>
                             }
-                            <p className={classes.description}>{getFirstWordsNews(item.text,40)}</p>
+                            <p className={classes.description}>{getFirstWordsNews(item.text,40)}...</p>
                             <div className={classes.infos}>
                                 <div className={classes.infoContainer}>
                                     <Visibility className={classes.icon}/>
@@ -49,6 +51,17 @@ export default function NewsSection({news}) {
                                     <p className={classes.textInfo}>{item.read} reads</p>
                                 </div>
                                 <p className={classes.date}>{moment(item.date).calendar()}</p>
+                                {
+                                    item.classifiedAs === 0?
+                                    <div className={classes.classifiedContainer}>
+                                        <PriorityHighIcon className={classes.errorIcon}/>
+                                        <p className={classes.errorText}>Fake</p>
+                                    </div> : 
+                                    <div className={classes.classifiedContainer}>
+                                        <CheckIcon className={classes.tickIcon}/>
+                                        <p className={classes.successText}>Verified</p>
+                                    </div>
+                                }
                             </div>
                         </Box>
                     </Link>
@@ -109,7 +122,7 @@ const useStyles = makeStyles((theme: Theme) =>
         infos:{
             display:'flex',
             flexDirection:'row',
-            width:'70%',
+            width:'95%',
             justifyContent:'space-between',
             alignItems:'center'
         },
@@ -128,6 +141,30 @@ const useStyles = makeStyles((theme: Theme) =>
             fontSize:'80%',
             color:Colors.SecondLightGray,
             fontFamily:customTheme.typography.fontFamily[DEFAULT_THEME],
+        },
+        classifiedContainer:{
+            display:'flex',
+            flexDirection:'row',
+            borderWidth:'2px solid red',
+            backgroundColor:Colors.White,
+            borderColor:Colors.Red,
+            borderRadius:25,
+            justifyContent:'center',
+        },
+        errorIcon:{
+            color:Colors.Red
+        },
+        errorText:{
+            color:Colors.Red,
+            fontSize:15,
+        },
+        tickIcon:{
+            color:Colors.SuccessGreen,
+        },
+        successText:{
+            color:Colors.SuccessGreen,
+            fontSize:15,
+            top:3
         }
     }),
 );

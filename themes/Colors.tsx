@@ -8,7 +8,9 @@ const Colors = {
     UltraLightGray:'#F7F7F7',
     BlackOpacity:'#000000B3',
     PrimaryColor: '#4051B6',
-    PrimaryColorOpacity:'#4051B6B3'
+    PrimaryColorOpacity:'#4051B6B3',
+    Red:'#BB2124',
+    SuccessGreen:"#22BB33"
 }
 
 export {
