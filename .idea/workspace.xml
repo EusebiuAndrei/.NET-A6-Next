@@ -18,29 +18,21 @@
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
     </expand>
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:single-news-page" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09a4d14c-0cf2-4877-8e30-cb4480ceefdb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/layouts/components/validate-news/useValidateNews.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_8_2021_7_37_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_8_2021_7_37_AM__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_8_2021_7_38_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_8_2021_7_38_AM__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/components/validate-news/ValidateNews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/components/validate-news/ValidateNews.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/Constants.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/themes/Constants.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/components/auth/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/components/auth/Login.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +42,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="single-news-page" />
+        <entry key="$PROJECT_DIR$" value="development" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -109,7 +101,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="single-news-page" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -126,14 +118,20 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="86" key="MergeDialog" timestamp="1610084523381">
+    <state x="184" y="86" key="MergeDialog" timestamp="1610599860847">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="184" y="86" key="MergeDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1610599860847" />
     <state x="184" y="86" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610084523381" />
-    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1610084523402">
+    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1610599718119">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1610599718119" />
     <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610084523402" />
+    <state x="730" y="212" key="git4idea.branch.GitSmartOperationDialog" timestamp="1610599825121">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="730" y="212" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1610599825121" />
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1610356726310">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
