@@ -58,8 +58,8 @@ export async function getStaticPaths() {
     // const paths = posts.map((post) => `/posts/${post.id}`)
 
     const paths = [
-        { params: { id: '1' } },
-        { params: { id: '2' } }
+        // { params: { id: '1' } },
+        // { params: { id: '2' } }
     ]
 
     // We'll pre-render only these paths at build time.
