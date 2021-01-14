@@ -4,7 +4,6 @@ const agent = new https.Agent({
 });
 
 const ApiService = {
-    // LOCAL:"https://localhost:5005",
     LOCAL:"https://news-app-uaic.azurewebsites.net",
     DEVELOPMENT:"",
     AGENT: agent,
