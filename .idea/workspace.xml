@@ -29,8 +29,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09a4d14c-0cf2-4877-8e30-cb4480ceefdb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/authorize.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/authorize.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/Constants.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/themes/Constants.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/services/ScreenSizes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/ScreenSizes.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
