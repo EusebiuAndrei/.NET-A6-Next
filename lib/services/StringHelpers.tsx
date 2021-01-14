@@ -11,6 +11,18 @@ export function getRandomColor() {
     return color;
 }
 
-export function getFirstWordsNews(string,n){
-    return string.replace(/(([^\s]+\s\s*){50})(.*)/,"$1…");
+export function getFirstWordsNews(string : string,n : number){
+    return string.split(/\s+/).slice(0,n).join(" ") + "...";
+}
+
+export function domainRegex(string : string){
+    var result : any
+    var match : any
+    if (match = string.match(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n\?\=]+)/im)) {
+        result = match[1]
+        if (match = result.match(/^[^\.]+\.(.+\..+)$/)) {
+            result = match[1]
+        }
+    }
+    return result
 }

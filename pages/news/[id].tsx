@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next";
-import {useState} from 'react'
+import React,{useState} from 'react'
 import DefaultLayout from "../../layouts/DefaultLayout";
 import {HeaderNews,RecommandationNews} from "../../layouts/components"
 import NewLineText from "../../layouts/components/NewLineText"
@@ -8,19 +8,47 @@ import ApiService from "../../lib/services/ApiService";
 import { useRouter } from 'next/router'
 import moment from 'moment'
 export default function Index({currentNews}) {
+    const [read,setRead] = React.useState(false)
     const classes = useStyles();
     const router = useRouter()
     const { id } = router.query
 
+    const handleScroll = () => {
+
+        const bottom = Math.ceil(window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight
+    
+        if (bottom && !read) {
+            console.log("READED!" + read)
+            ApiService.addReadToNews(id);
+            setRead(true)
+        }
+    };
+
+    React.useEffect(() => {
+        ApiService.addViewToNews(id);
+
+        window.addEventListener('scroll', handleScroll, {
+            passive: true
+          });
+      
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+
+    }, []);
+
     return <DefaultLayout>
        <HeaderNews
             title={currentNews.title}
-            topic={currentNews.topic}
+            topic={currentNews.topic.name}
             source={currentNews.sourceLink}
        />
-        <div className={classes.imgContainer}>
-            <img className={classes.img} src={"https://www.economist.com/img/b/1280/720/90/sites/default/files/images/2021/01/articles/main/20210109_eup503.jpg"}/>
-        </div>
+        {
+            currentNews.sourceImage === "" ? null : 
+            <div className={classes.imgContainer}>
+                <img className={classes.img} src={currentNews.sourceImage}/>
+            </div>
+        }
         <div className={classes.allInfo}>
             <div className={classes.dateContainer}>
                 <p className={classes.date}>{moment(currentNews.date).calendar()}</p>
@@ -50,8 +78,8 @@ export async function getStaticPaths() {
     // const paths = posts.map((post) => `/posts/${post.id}`)
 
     const paths = [
-        { params: { id: '1' } },
-        { params: { id: '2' } }
+        // { params: { id: '1' } },
+        // { params: { id: '2' } }
     ]
 
     // We'll pre-render only these paths at build time.
@@ -73,7 +101,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         imgContainer:{
             width:'100%',
-            height:'70%',
+            height:'90%',
             display:'flex',
             justifyContent:'center',
             alignItems:'center',

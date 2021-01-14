@@ -33,7 +33,7 @@ const useLogin = () => {
                 maxAge: 3 * 3600, // Expires after 1hr
                 sameSite: true,
             })
-            router.replace('/news')
+            router.replace('/')
         }
     });
 

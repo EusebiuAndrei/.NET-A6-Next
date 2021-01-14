@@ -7,9 +7,6 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import {CircularProgress, TextField, Typography} from '@material-ui/core'
-import {useMutation} from "react-query";
-import {login} from '../../../lib/services/ApiService';
-import {useCookies} from "react-cookie";
 import useLogin from "../../../hooks/useLogin";
 
 const useStyles = makeStyles((theme) => ({
@@ -106,7 +103,7 @@ export default function Login() {
             <TextField
               error={passwordError == null ? false : true}
               id="standard-password-input"
-              type="password"
+              // type="password"
               label="Password"
               className={classes.inputStyle}
               helperText={passwordError}

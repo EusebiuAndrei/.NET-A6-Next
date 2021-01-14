@@ -1,8 +1,10 @@
 import { fade, makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 import {Colors} from "../../../themes/Colors"
 import {Styles} from "../../../themes/ApplicationStyles"
 import {customTheme,DEFAULT_THEME} from "../../../themes/Fonts"
+import Link from 'next/link'
+import {domainRegex,capitalizeFirstLetter} from "../../../lib/services/StringHelpers"
 
 export default function FirstNews({title,topic,source}) {
     const classes = useStyles();
@@ -10,10 +12,12 @@ export default function FirstNews({title,topic,source}) {
         <div className={classes.container}>
             <div className={classes.typeContainer}>
                 <div className={classes.bar}></div>
-                <p className={classes.typeText}>{topic}</p>
+                <p className={classes.typeText}>{capitalizeFirstLetter(topic)}</p>
             </div>
             <div className={classes.titleContainer}>
-                <p className={classes.sourceText}>Source {source}</p>
+                <Link href={source} passHref={true}>
+                    <Button className={classes.sourceText}>Source {domainRegex(source)}</Button>
+                </Link>
                 <p className={classes.titleText}>{title}</p>
             </div>
         </div>
@@ -51,9 +55,9 @@ const useStyles = makeStyles((theme: Theme) =>
         sourceText:{
             // backgroundColor:'red',
             marginTop:26,
-            fontSize:'115%',
+            fontSize:'100%',
             fontWeight:'lighter',
-            color:'#4051B6'
+            color:Colors.PrimaryColor
         },
         titleText:{
             fontSize:'180%',

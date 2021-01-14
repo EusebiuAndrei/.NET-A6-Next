@@ -5,15 +5,16 @@ function useWindowSize() {
       width: undefined,
       height: undefined,
     });
-  
-    useEffect(() => {
-      if (typeof window !== 'undefined') {
-        function handleResize() {
-          setWindowSize({
+
+    function handleResize() {
+        setWindowSize({
             width: window.innerWidth,
             height: window.innerHeight,
-          });
-        }
+        });
+    }
+
+    useEffect(() => {
+      if (typeof window !== 'undefined') {
       
         window.addEventListener("resize", handleResize);
        

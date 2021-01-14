@@ -4,17 +4,24 @@ import {Colors} from "../../../themes/Colors"
 import {Styles} from "../../../themes/ApplicationStyles"
 import {customTheme,DEFAULT_THEME} from "../../../themes/Fonts"
 import Button from '@material-ui/core/Button';
+import Link from 'next/link'
 
-export default function FirstNews({topics}) {
+export default function NewsTypes({topics,currentTopic}) {
     const classes = useStyles();
     return(
         <div className={classes.newsTypes}>
         {
-            topics.map((item,key)=>{
+            topics.map((item : any,key : any)=>{
                 return (
-                    <Button onClick={()=>{alert(item.name)}} key={key} className={classes.buttonStyle} variant="outlined">
-                        # {item.name}
-                    </Button>
+                    <Link key={key} href={`/topic/${item.id}`}>
+                        <Button 
+                            key={key} 
+                            className={currentTopic != item.id ? classes.buttonStyle : classes.buttonSelectedStyle } 
+                            variant="outlined"
+                        >
+                            # {item.name}
+                        </Button>
+                    </Link>
                 )
             })
         }
@@ -32,13 +39,21 @@ const useStyles = makeStyles((theme: Theme) =>
             padding:'1.5%',
         },
         buttonStyle:{
-            borderWidth:0,
-            borderBottomWidth:0.5,
-            borderBottomColor:Colors.LightGray,
-            padding:2,
-            // fontFamily:customTheme.typography.fontFamily[DEFAULT_THEME],
             fontWeight:'bold',
             color:Colors.AppBarColor,
+            borderWidth:0,
+            padding:4,
+            paddingLeft:6,
+            paddingRight:6
+        },
+        buttonSelectedStyle:{
+            backgroundColor:Colors.PrimaryColor,
+            fontWeight:'bold',
+            color:Colors.White,
+            borderWidth:0,
+            padding:4,
+            paddingLeft:8,
+            paddingRight:8
         }
     }),
 );
