@@ -6,18 +6,10 @@ const agent = new https.Agent({
      rejectUnauthorized: false,
 });
 
-const getNews = async (options : any, isAuthorized?: any) => {
+const getNews = async (options : any) => {
     try{
         const res = await fetch(`${HOST}/api/v1/news`, {agent, ...options} as RequestInit)
         let data = await res.json()
-        if(isAuthorized == 0){
-            data.forEach((element,key) => {
-                if(element.classifiedAs === 0){
-                    console.log(key)
-                    data.splice(key,1)
-                }
-            });
-        }
         return data;
     } catch(e){
         console.log(e)

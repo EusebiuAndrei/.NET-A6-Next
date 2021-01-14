@@ -103,7 +103,7 @@ export default function Login() {
             <TextField
               error={passwordError == null ? false : true}
               id="standard-password-input"
-              // type="password"
+              type="password"
               label="Password"
               className={classes.inputStyle}
               helperText={passwordError}

@@ -9,7 +9,8 @@ export default function Logout() {
 
     const handleClick = () => {
         logout();
-        router.replace('/news')
+        router.replace('/')
+        console.log("LOGOUT LOGOUT")
     }
 
     return (
