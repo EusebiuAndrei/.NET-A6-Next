@@ -12,7 +12,7 @@ export function getRandomColor() {
 }
 
 export function getFirstWordsNews(string : string,n : number){
-    return string.split(/\s+/).slice(0,n).join(" ") + "...";
+    return string.split(/\s+/).slice(0,n).join(" ");
 }
 
 export function domainRegex(string : string){
