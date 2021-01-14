@@ -6,7 +6,7 @@ const agent = new https.Agent({
      rejectUnauthorized: false,
 });
 
-const getNews = async (options : any, isAuthorized:any) => {
+const getNews = async (options : any, isAuthorized?: any) => {
     try{
         const res = await fetch(`${HOST}/api/v1/news`, {agent, ...options} as RequestInit)
         let data = await res.json()

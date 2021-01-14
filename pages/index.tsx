@@ -23,9 +23,9 @@ export default function Index({news,topics,latestNews}) {
 }
 
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-    const {isAuthorized} = authorize(context);
-    const news = await ApiService.getNews(context,isAuthorized);
+export const getStaticProps: GetStaticProps = async (context) => {
+    // const {isAuthorized} = authorize(context);
+    const news = await ApiService.getNews(context, false);
     const topics = await ApiService.getTopics(context);
     const latestNews = await ApiService.latestNews(context,3);
     return {
