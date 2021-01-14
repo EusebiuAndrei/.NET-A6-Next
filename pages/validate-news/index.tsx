@@ -2,11 +2,12 @@
 import { GetStaticProps} from "next";
 import DefaultLayout from "../../layouts/DefaultLayout";
 import {Typography} from "@material-ui/core";
+import {ValidateNews} from "../../layouts/components/validate-news";
 
 export default function Index() {
     return(
         <DefaultLayout>
-            <Typography variant='body1'>Validate news</Typography>
+            <ValidateNews />
         </DefaultLayout>
     )
 }

@@ -1,7 +1,7 @@
 import cookies from "next-cookies";
 import jwt from 'jsonwebtoken';
 import {useCookies} from "react-cookie";
-import config from '../next.config'
+import {ApiService} from "../themes/Constants";
 
 export const useAuthorization = () => {
     const [cookies] = useCookies()
@@ -9,7 +9,7 @@ export const useAuthorization = () => {
 
     let isAuthenticated, tokenData;
     try {
-        tokenData = jwt.verify(authToken, config.publicRuntimeConfig.jwtKey);
+        tokenData = jwt.verify(authToken, ApiService.JWT_KEY);
         isAuthenticated = true
     } catch (e) {
         console.log('error')
