@@ -8,14 +8,34 @@ import ApiService from "../../lib/services/ApiService";
 import { useRouter } from 'next/router'
 import moment from 'moment'
 export default function Index({currentNews}) {
-
-    React.useEffect(() => {
-        const { id } = router.query
-        ApiService.addViewToNews(id);
-    }, []);
-
+    const [read,setRead] = React.useState(false)
     const classes = useStyles();
     const router = useRouter()
+    const { id } = router.query
+
+    const handleScroll = () => {
+
+        const bottom = Math.ceil(window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight
+    
+        if (bottom && !read) {
+            console.log("READED!" + read)
+            ApiService.addReadToNews(id);
+            setRead(true)
+        }
+    };
+
+    React.useEffect(() => {
+        ApiService.addViewToNews(id);
+
+        window.addEventListener('scroll', handleScroll, {
+            passive: true
+          });
+      
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+
+    }, []);
 
     return <DefaultLayout>
        <HeaderNews

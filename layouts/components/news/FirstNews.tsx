@@ -1,11 +1,14 @@
 import { fade, makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 import {Colors} from "../../../themes/Colors"
 import {Images} from "../../../themes/Images"
 import {Styles} from "../../../themes/ApplicationStyles"
 import {customTheme,DEFAULT_THEME} from "../../../themes/Fonts"
 import {Carousel} from 'react-bootstrap'
 import {getFirstWordsNews} from "../../../lib/services/StringHelpers"
+import Link from 'next/link'
+
 const INTERVAL = 1000
 export default function FirstNews({news}) {
     const classes = useStyles();
@@ -13,7 +16,7 @@ export default function FirstNews({news}) {
             <Carousel className={classes.firstNewsContainer}>
                 
                 {
-                    news.map((item,key)=>{
+                    news.map((item:any,key:any)=>{
                         return(
                             <Carousel.Item key={key} interval={INTERVAL}>
                                 <div className={classes.imageContainer}>
@@ -25,12 +28,20 @@ export default function FirstNews({news}) {
                                     </Box>
                                 </div>
                                 <Carousel.Caption>
-                                <h1 className={classes.title}>
-                                    {item.title}
-                                </h1>
-                                <p className={classes.subTitle}>
-                                    {getFirstWordsNews(item.text,30)}
-                                </p>
+                                    <Link href={"/news/"+item.id}>
+                                        <div>
+                                            <Button>
+                                                <h1 className={classes.title}>
+                                                    {item.title}
+                                                </h1>
+                                            </Button>
+                                            <Button>
+                                                <p className={classes.subTitle}>
+                                                    {getFirstWordsNews(item.text,30)}
+                                                </p>
+                                            </Button>
+                                        </div>
+                                    </Link>
                                 </Carousel.Caption>
                             </Carousel.Item>
                         )
@@ -64,10 +75,10 @@ const useStyles = makeStyles((theme: Theme) =>
         title:{
             fontFamily:customTheme.typography.fontFamily[DEFAULT_THEME],
             textAlign:'center',
-            fontSize:'200%',
+            fontSize:'180%',
             color:Colors.White,
             backgroundColor:Colors.BlackOpacity,
-            padding:5,
+            padding:10,
             borderRadius:5
         },
         subTitle:{
