@@ -35,10 +35,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09a4d14c-0cf2-4877-8e30-cb4480ceefdb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/layouts/components/validate-news/ValidateNews.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/layouts/components/validate-news/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/components/validate-news/useValidateNews.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/validate-news/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/validate-news/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/components/validate-news/ValidateNews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/components/validate-news/ValidateNews.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/Constants.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/themes/Constants.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +90,8 @@
       <updated>1607538647348</updated>
       <workItem from="1607538655943" duration="6864000" />
       <workItem from="1610212644581" duration="655000" />
-      <workItem from="1610355563540" duration="2488000" />
+      <workItem from="1610355563540" duration="2602000" />
+      <workItem from="1610537013938" duration="5299000" />
     </task>
     <servers />
   </component>

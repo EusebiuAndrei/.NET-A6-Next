@@ -12,14 +12,15 @@ import {
     FormHelperText,
     FormLabel, Input,
     InputLabel,
-    Paper,
+    Paper, Snackbar,
     TextField,
     Typography
 } from '@material-ui/core'
 import {useMutation} from "react-query";
 import {useCookies} from "react-cookie";
-import useLogin from "../../../hooks/useLogin";
+import useValidateNews from "./useValidateNews";
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+import MuiAlert from '@material-ui/lab/Alert';
 
 const useStyles = makeStyles((theme) => ({
     form: {
@@ -40,9 +41,14 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: theme.spacing(2),
     },
     btn:{
-        marginTop: theme.spacing(4)
-    }
+        marginTop: theme.spacing(4),
+        padding: theme.spacing(0.75, 8)
+    },
 }));
+
+function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 export default function Login() {
     const classes = useStyles();
@@ -52,7 +58,29 @@ export default function Login() {
     const [usernameError,setUsernameError] = React.useState(null);
     const [passwordError,setPasswordError] = React.useState(null);
 
-    const loginMutation = useLogin();
+    const [snackbarTrueOpen, setSnackbarTrueOpen] = React.useState(false);
+    const handleSnackbarTrueClick = () => {
+        setSnackbarTrueOpen(true);
+    };
+    const handleSnackbarTrueClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setSnackbarTrueOpen(false);
+    };
+
+    const [snackbarFalseOpen, setSnackbarFalseOpen] = React.useState(false);
+    const handleSnackbarFalseClick = () => {
+        setSnackbarFalseOpen(true);
+    };
+    const handleSnackbarFalseClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setSnackbarFalseOpen(false);
+    };
+
+    const validateNewsMutation = useValidateNews(handleSnackbarTrueClick, handleSnackbarFalseClick);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -62,38 +90,40 @@ export default function Login() {
         setOpen(false);
     };
 
-    useEffect(() => {if(loginMutation.isSuccess) setOpen(false)}, [loginMutation.isSuccess])
+    useEffect(() => {if(validateNewsMutation.isSuccess) setOpen(false)}, [validateNewsMutation.isSuccess])
 
     const onLoginPress = (e) =>{
         e.preventDefault()
         if(!username){
-            setUsernameError("Please enter an username");
+            setUsernameError("Please enter a title");
         } else if(!password){
-            setPasswordError("Please enter an password");
+            setPasswordError("Please enter a text");
             setUsernameError(null);
         } else {
-            const user = {
-                username,
-                password
+            const news = {
+                title: username,
+                text: password
             }
             setUsernameError(null);
-            setPasswordError(null)
-            setUsername('')
-            setPassword('')
-            loginMutation.mutate(user);
+            setPasswordError(null);
+            validateNewsMutation.mutate(news);
         }
     }
 
+    const onClear = () => {
+        setUsername('')
+        setPassword('')
+    }
 
+    console.log("SOME", validateNewsMutation.data)
 
     return (
         <Paper elevation={0} style={{width: '50%', margin: '0 auto', marginTop: '5em'}}>
-            <Typography variant="h5" style={{marginBottom: '20px'}}>Lie detector test for news</Typography>
+            <Typography variant="h5" align='center' style={{marginBottom: '20px'}}>Lie detector test for news</Typography>
             <form className={classes.form} onSubmit={onLoginPress}>
                 <FormControl className={classes.inputStyle}>
-                    <FormLabel htmlFor="standard-basic">Username</FormLabel>
+                    <FormLabel htmlFor="standard-basic">Title</FormLabel>
                     <Input
-                        variant='contained'
                         style={{marginTop: '0'}}
                         error={usernameError == null ? false : true}
                         id="standard-basic"
@@ -114,11 +144,25 @@ export default function Login() {
                     />
                     {passwordError && <FormHelperText id="my-helper-text-v" error={passwordError == null ? false : true}>{passwordError}</FormHelperText>}
                 </FormControl>
-                <Button type='submit' className={classes.btn} variant="contained" color="primary">
-                    {loginMutation.isLoading ? <CircularProgress style={{color: 'white', borderColor: 'white'}} size={20}/> : 'Test'}
-                </Button>
-                {loginMutation.isError && <Typography variant='body2' color="error" style={{marginTop: '12px'}}>There is a problem with your credentials</Typography>}
+                <div style={{display: 'flex', justifyContent: 'center'}}>
+                    <Button type='submit' className={classes.btn} variant="contained" color="primary">
+                        {validateNewsMutation.isLoading ? <CircularProgress style={{color: 'white', borderColor: 'white'}} size={20}/> : 'Test'}
+                    </Button>
+                    <Button className={classes.btn} variant="contained" color="secondary" onClick={onClear} style={{marginLeft: '12px'}}>
+                        Clear
+                    </Button>
+                </div>
             </form>
+            <Snackbar open={snackbarTrueOpen} autoHideDuration={4000} onClose={handleSnackbarTrueClose} anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}>
+                <Alert onClose={handleClose} severity="success">
+                    We can trust this news
+                </Alert>
+            </Snackbar>
+            <Snackbar open={snackbarFalseOpen} autoHideDuration={4000} onClose={handleSnackbarFalseClose} anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}>
+                <Alert onClose={handleClose} severity="error">
+                    Oops.. You're spreading false news
+                </Alert>
+            </Snackbar>
         </Paper>
     );
 }
