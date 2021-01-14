@@ -16,6 +16,16 @@ const getNews = async (options) => {
     }
 }
 
+const latestNews = async (options) => {
+    try{
+        const res = await fetch(`${HOST}/api/v1/news/latest-news?number=3`, {agent, ...options} as RequestInit)
+        const data = await res.json()
+        return data;
+    } catch(e){
+        console.log(e)
+    }
+}
+
 const getTopics = async (options) => {
     const res = await fetch(`${HOST}/api/v1/topic`, {agent, ...options} as RequestInit)
     const data = await res.json()
@@ -33,8 +43,43 @@ const getNewsById = async (id : any) => {
     }
 }
 
+const getNewsByTopic = async (id : any) => {
+    try{
+
+        const res = await fetch(`${HOST}/api/v1/news/topic/${id}`, {agent} as RequestInit)
+        const data = await res.json()
+        return data;
+    } catch(e){
+        console.log(e)
+    }
+}
+
+const addViewToNews = async (id: any) =>{
+    try{
+        // const res = await fetch(`${HOST}/api/v1/news/views/${id}`, { method: 'PUT' } as RequestInit)
+        // if (!res.ok) throw new Error(res.statusText)
+
+
+        const res = await fetch(`${HOST}/api/v1/news/views/${id}`,
+            {
+                method: 'PUT',
+                agent: ApiService.AGENT
+            } as RequestInit)
+        if (!res.ok) throw new Error(res.statusText)
+        const data = await res.json()
+        return data;
+
+
+    } catch(e){
+        console.log(e)
+    }
+}
+
 export default {
     getNews,
     getTopics,
-    getNewsById
+    getNewsById,
+    latestNews,
+    getNewsByTopic,
+    addViewToNews
 }

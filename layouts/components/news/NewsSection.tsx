@@ -89,7 +89,7 @@ export default function NewsSection({news}) {
                         <p className={classes.title}>{item.title}</p>
                         <Link href={"/news/"+item.id}>
                             <Button className={classes.imgContainer}>
-                                <img className={classes.image} src={myNews[item.id%6].image}/>
+                                {item.sourceImage === "" ? null : <img className={classes.image} src={item.sourceImage}/>}
                             </Button>
                         </Link>
                         <p className={classes.description}>{getFirstWordsNews(item.text,40)}</p>
@@ -124,9 +124,11 @@ const useStyles = makeStyles((theme: Theme) =>
             fontWeight:'bold',
             width:'100%',
             fontSize:'100%',
-            padding:0
+            padding:0,
+            marginTop:'2%'
         },
         description:{
+            marginTop:'2%',
             fontFamily:customTheme.typography.fontFamily[DEFAULT_THEME],
             color:Colors.DarkGray,
         },
@@ -140,7 +142,7 @@ const useStyles = makeStyles((theme: Theme) =>
             borderRadius:Metrics.defaultBorderRadius
         },
         imgContainer:{
-            marginTop:'3%',
+            marginTop:'1%',
             backgroundColor:Colors.UltraLightGray,
             ...Styles.center,
             padding:'3%',
@@ -148,9 +150,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         infoContainer:{
             display:'flex',
-            alignItems:'center',
             flexDirection:'row',
-            justifyContent:'center'
         },
         infos:{
             display:'flex',
@@ -164,6 +164,7 @@ const useStyles = makeStyles((theme: Theme) =>
             fontSize:23
         },
         textInfo:{
+            display:'flex',
             marginLeft:5,
             fontSize:'90%',
             color:Colors.SecondLightGray,

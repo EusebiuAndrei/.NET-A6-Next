@@ -6,7 +6,9 @@ const Colors = {
     DarkGray:"#525252",
     White:"#FFFFFF",
     UltraLightGray:'#F7F7F7',
-    BlackOpacity:'#000000B3'
+    BlackOpacity:'#000000B3',
+    PrimaryColor: '#4051B6',
+    PrimaryColorOpacity:'#4051B6B3'
 }
 
 export {
