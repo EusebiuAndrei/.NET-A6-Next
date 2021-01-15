@@ -13,7 +13,11 @@ export default function Index({topics,latestNews}) {
     const [userNews, setUserNews] = useState([])
     const info = useQuery('news', ApiService.getNews, {
         onSuccess(data) {
-            setUserNews(data)
+            if (!isAuthorized) {
+                setUserNews(data.filter(news => news.classifiedAs === 1))
+            } else {
+                setUserNews(data)
+            }
         }
     })
 
@@ -24,7 +28,7 @@ export default function Index({topics,latestNews}) {
     useEffect(() => {
         if(!isAuthorized){
             if(info.data) {
-                setUserNews(info.data.filter(news => news.classfiedAs === 1))
+                setUserNews(info.data.filter(news => news.classifiedAs === 1))
             }
         }
     }, [isAuthorized])

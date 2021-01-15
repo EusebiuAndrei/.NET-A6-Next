@@ -29,10 +29,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09a4d14c-0cf2-4877-8e30-cb4480ceefdb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/images/default.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/components/auth/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/components/auth/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/components/auth/Logout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/components/auth/Logout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/services/ApiService.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/ApiService.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/components/news/FirstNews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/components/news/FirstNews.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/components/news/NewsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/components/news/NewsSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,12 +61,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/images" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\.NET Projects\Ochii_Din_Umbra\NextApp\.NET-A6-Next\assets\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/old" />
       <recent name="$PROJECT_DIR$/old/pages" />
@@ -85,7 +89,8 @@
       <workItem from="1610212644581" duration="655000" />
       <workItem from="1610355563540" duration="2602000" />
       <workItem from="1610537013938" duration="5299000" />
-      <workItem from="1610646454238" duration="3040000" />
+      <workItem from="1610646454238" duration="3789000" />
+      <workItem from="1610688631011" duration="1262000" />
     </task>
     <servers />
   </component>

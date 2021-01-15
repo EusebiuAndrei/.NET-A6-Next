@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         imageContainer:{
             width:'100%',
-            height:600,
+            height:700,
             ...Styles.center,
         },
         boxStyle:{

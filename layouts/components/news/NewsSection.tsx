@@ -10,6 +10,7 @@ import {Visibility,ChromeReaderMode} from '@material-ui/icons'
 import moment from 'moment';
 import PriorityHighIcon from '@material-ui/icons/PriorityHigh';
 import CheckIcon from '@material-ui/icons/Check';
+import {Images} from "../../../themes/Images";
 
 export default function NewsSection({news}) {
     const classes = useStyles();
@@ -35,9 +36,9 @@ export default function NewsSection({news}) {
                                 <p className={classes.title}>{getFirstWordsNews(item.title,10)}</p>
                             </div>
                             {
-                                item.sourceImage === "" ? null : 
+
                                     <Button className={classes.imgContainer}>
-                                        <img className={classes.image} src={item.sourceImage}/>                                
+                                        <img className={classes.image} style={{height: item.sourceImage === "" ? '70%' : '100%'}} src={item.sourceImage === "" ? Images.DefaultNewsImage : item.sourceImage}/>
                                     </Button>
                             }
                             <p className={classes.description}>{getFirstWordsNews(item.text,40)}...</p>
